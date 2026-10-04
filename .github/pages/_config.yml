@@ -1,0 +1,27 @@
+title: "common-store"
+tagline: "One JSON schema, one GQL dialect, across MongoDB / MySQL / SQLite / PostgreSQL — one shared Rust core"
+description: >-
+  common-store is a multi-backend data layer: define each model once as a pure JSON schema and
+  query it with one MongoDB-style GQL tree dialect across MongoDB, MySQL, SQLite and PostgreSQL.
+  A single Rust core owns parsing, permissions, computed columns and dialect translation; Node.js
+  and Python are thin hosts over it, so behaviour cannot drift between languages.
+url: "https://coenddt.github.io"
+baseurl: "/common-store"
+repository: "coenddt/common-store"
+lang: en
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
