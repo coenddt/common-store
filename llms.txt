@@ -1,0 +1,15 @@
+# common-store
+
+> One JSON schema and one MongoDB-style GQL dialect across MongoDB, MySQL, SQLite and PostgreSQL —
+> one shared Rust core with Node.js and Python hosts (Go in progress).
+
+- Engine: `rust-store-core` (crates.io) — GQL parsing, permissions, computed columns, command planning, SQL dialects. No IO.
+- Bindings: `rust-store-node` (npm), `rust-store-py` (PyPI), `core-ffi` (C ABI, in-repo).
+- Hosts: `nodejs-store` (npm), `storepy` (PyPI, import `py_store`), `go-store` (in-repo, v0).
+- API skins: `store-api-*` (REST), `store-graphql-*`, `store-grpc-*`, `store-mcp-*`, combined by `store-gateway-*`.
+- Control plane: `meta-store` (definition publish / list / rollback).
+- Scaffold: `create-store-app` (npm) — `npx create-store-app myapp [--lang node|python] [--skins rest,graphql,grpc]`.
+- Quick start (Node): `npx create-store-app myapp && cd myapp && npm install && npm start`
+- Quick start (Python): `npx create-store-app myapp --lang python && cd myapp && pip install -e . && python impl/bootstrap.py`
+  (requires `store-gateway-py`, not yet on PyPI)
+- Host docs: https://coenddt.github.io/py-store/ · https://coenddt.github.io/rust-store/
