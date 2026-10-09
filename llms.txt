@@ -1,6 +1,6 @@
 # common-store
 
-> One JSON schema and one MongoDB-style GQL dialect across MongoDB, MySQL, SQLite and PostgreSQL —
+> One JSON schema and one MongoDB-style GQL dialect across MongoDB, MySQL, SQLite, PostgreSQL and local disk —
 > one shared Rust core with Node.js and Python hosts (Go in progress).
 
 - Engine: `rust-store-core` (crates.io) — GQL parsing, permissions, computed columns, command planning, SQL dialects. No IO.

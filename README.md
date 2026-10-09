@@ -1,6 +1,6 @@
 # common-store
 
-**一套 JSON schema、一种 GQL 方言，跑通 MongoDB / MySQL / SQLite / PostgreSQL —— Node.js 与 Python 共用同一个 Rust 内核。**
+**一套 JSON schema、一种 GQL 方言，跑通 MongoDB / MySQL / SQLite / PostgreSQL / 本地磁盘（local）—— Node.js 与 Python 共用同一个 Rust 内核。**
 
 （1 段定位：纯 JSON 定义模型；嵌套关系编译成后端单条原生查询，不用手写 $lookup / JOIN；
   内置 RBAC、计算列、软删除；语义只实现一次，故 Node/Python 行为不漂移。）
@@ -41,6 +41,8 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 | 引擎 | — | — | `rust-store-core` 4.0.0（crates.io） |
 | 绑定 | `rust-store-node` 4.0.0（npm） | `rust-store-py` 4.0.0（PyPI） | `core-ffi`（仓内，C ABI） |
 | 宿主 | `nodejs-store` 4.0.0（npm） | `storepy` 4.0.0（PyPI，import `py_store`） | `go-store`（仓内，Go 宿主 v0，SQLite） |
+
+> 两宿主（nodejs-store / storepy）均内置 `local` 后端（零外部服务、零原生 DB 引擎）。
 | REST 皮 | `store-api-node` 0.1.0 | `store-api-py` 0.1.0 | — |
 | GraphQL 皮 | `store-graphql-node` 0.1.0 | `store-graphql-py` 0.1.0 | — |
 | gRPC 皮 | `store-grpc-node` 0.1.0 | `store-grpc-py` 0.1.0 | — |
