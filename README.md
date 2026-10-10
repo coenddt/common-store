@@ -21,7 +21,7 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 
 > 前置：一个本地 MongoDB（默认 `mongodb://127.0.0.1:27017`，库名 = 应用名）。
 > 协议皮由 `--skins rest,graphql,grpc` 选择（至少 1 个，缺省 `rest`）。
-> ⚠️ Python 路径当前依赖 `store-gateway-py`，该包**尚未发布 PyPI**（见「已知缺口」）。
+> Python 路径依赖 `store-gateway-py`（已发布 PyPI `0.1.1`）。
 
 ## 这是什么（分层）
 
@@ -38,17 +38,20 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 
 | 组件 | Node.js | Python | Rust |
 |---|---|---|---|
-| 引擎 | — | — | `rust-store-core` 4.0.0（crates.io） |
-| 绑定 | `rust-store-node` 4.0.0（npm） | `rust-store-py` 4.0.0（PyPI） | `core-ffi`（仓内，C ABI） |
-| 宿主 | `nodejs-store` 4.0.0（npm） | `storepy` 4.0.0（PyPI，import `py_store`） | `go-store`（仓内，Go 宿主 v0，SQLite） |
+| 引擎 | — | — | `rust-store-core` 4.4.0（crates.io） |
+| 绑定 | `rust-store-node` 4.4.0（npm） | `rust-store-py` 4.4.0（PyPI） | `core-ffi`（仓内，C ABI） |
+| 宿主 | `nodejs-store` 4.4.1（npm） | `storepy` 4.4.3（PyPI，import `py_store`） | `go-store`（仓内，Go 宿主 v0，SQLite） |
+| REST 皮 | `store-api-node` 0.4.0 | `store-api-py` 0.4.0 | — |
+| GraphQL 皮 | `store-graphql-node` 0.3.0 | `store-graphql-py` 0.3.0 | — |
+| gRPC 皮 | `store-grpc-node` 0.2.0 | `store-grpc-py` 0.2.0 | — |
+| MCP 皮 | `store-mcp-node` 0.2.0 | `store-mcp-py` 0.2.0 | — |
+| 协议组合器 | `store-gateway-node` 0.1.1 | `store-gateway-py` 0.1.1 | — |
+| RBAC 引导插件 | `store-rbac-bootstrap-node` 0.2.0 | `store-rbac-bootstrap-py` 0.2.0 | — |
+| 资源引导插件 | `store-resource-bootstrap-node` 0.3.0 | `store-resource-bootstrap-py` 0.3.0 | — |
+| 控制面 | `meta-store-node` 0.2.0 | — | — |
+| 脚手架 | `create-store-app` 0.2.1（npm） | 同左（`--lang python`） | — |
 
-> 两宿主（nodejs-store / storepy）均内置 `local` 后端（零外部服务、零原生 DB 引擎）。
-| REST 皮 | `store-api-node` 0.1.0 | `store-api-py` 0.1.0 | — |
-| GraphQL 皮 | `store-graphql-node` 0.1.0 | `store-graphql-py` 0.1.0 | — |
-| gRPC 皮 | `store-grpc-node` 0.1.0 | `store-grpc-py` 0.1.0 | — |
-| MCP 皮 | `store-mcp-node` 0.1.0 | `store-mcp-py` 0.1.0 | — |
-| 协议组合器 | `store-gateway-node` 0.1.0 | `store-gateway-py` **未发布** | — |
-| 脚手架 | `create-store-app` 0.2.0（npm） | 同左（`--lang python`） | — |
+> 两宿主（`nodejs-store` / `storepy`）均内置 `local` 后端（零外部服务、零原生 DB 引擎）。
 
 ## 三种用法
 
@@ -61,11 +64,6 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 - Python 宿主：https://coenddt.github.io/py-store/ · 仓库 https://github.com/coenddt/py-store
 - Node.js 宿主：https://github.com/coenddt/nodejs-store （npm `nodejs-store`）
 - 引擎 core：https://coenddt.github.io/rust-store/ · 仓库 https://github.com/coenddt/rust-store
-
-## 已知缺口
-
-- `store-gateway-py` 未发布 PyPI ⇒ Python 一键流程 `pip install -e .` 会失败（其余 Python 依赖
-  `storepy` / `store-api-py` / `store-graphql-py` / `store-grpc-py` 均已发布）。
 
 ## License
 
