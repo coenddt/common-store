@@ -38,9 +38,9 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 
 | 组件 | Node.js | Python | Rust |
 |---|---|---|---|
-| 引擎 | — | — | `rust-store-core` 4.4.0（crates.io） |
-| 绑定 | `rust-store-node` 4.4.0（npm） | `rust-store-py` 4.4.0（PyPI） | `core-ffi`（仓内，C ABI） |
-| 宿主 | `nodejs-store` 4.4.1（npm） | `storepy` 4.4.3（PyPI，import `py_store`） | `go-store`（仓内，Go 宿主 v0，SQLite） |
+| 引擎 | — | — | `rust-store-core` 4.9.0（crates.io） |
+| 绑定 | `rust-store-node` 4.9.0（npm） | `rust-store-py` 4.9.0（PyPI） | `core-ffi`（仓内，C ABI） |
+| 宿主 | `nodejs-store` 4.9.0（npm） | `storepy` 4.9.0（PyPI，import `py_store`） | `go-store`（仓内，Go 宿主 v0，SQLite） |
 | REST 皮 | `store-api-node` 0.4.0 | `store-api-py` 0.4.0 | — |
 | GraphQL 皮 | `store-graphql-node` 0.3.0 | `store-graphql-py` 0.3.0 | — |
 | gRPC 皮 | `store-grpc-node` 0.2.0 | `store-grpc-py` 0.2.0 | — |
@@ -61,9 +61,9 @@ cd myapp && pip install -e . && python impl/bootstrap.py
 
 ## 文档
 
-- Python 宿主：https://coenddt.github.io/py-store/ · 仓库 https://github.com/coenddt/py-store
-- Node.js 宿主：https://github.com/coenddt/nodejs-store （npm `nodejs-store`）
-- 引擎 core：https://coenddt.github.io/rust-store/ · 仓库 https://github.com/coenddt/rust-store
+- Python 宿主：https://coenddt.github.io/py-store/ · 仓库 https://github.com/coenddt/py-store · Gitee https://gitee.com/coenddt/py-store
+- Node.js 宿主：https://github.com/coenddt/nodejs-store （npm `nodejs-store`）· Gitee https://gitee.com/coenddt/nodejs-store
+- 引擎 core：https://coenddt.github.io/rust-store/ · 仓库 https://github.com/coenddt/rust-store · Gitee https://gitee.com/coenddt/rust-store
 
 ## License
 
